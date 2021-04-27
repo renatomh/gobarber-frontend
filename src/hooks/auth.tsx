@@ -3,10 +3,18 @@ import React, { createContext, useCallback, useContext, useState } from 'react';
 // Importando a comunicação com a API
 import api from '../services/api';
 
+// Criando a tipagem para o usuário
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  avatar_url: string;
+}
+
 // Criando a tipagem para o estado de autenticação
 interface AuthState {
   token: string;
-  user: object;
+  user: User;
 }
 
 // Criando a tipagem para as credenciais a serem recebidas
@@ -17,10 +25,11 @@ interface SignInCredentials {
 
 // Tipagem para o contexto de autenticação
 interface AuthContextData {
-  user: object;
+  user: User;
   // Definindo os métodos do contexto de autenticação
   signIn(credentials: SignInCredentials): Promise<void>;
   signOut(): void;
+  updateUser(user: User): void;
 }
 
 // Criando o contexto de autenticação do usuário e iniciando como vazio
@@ -36,6 +45,8 @@ const AuthProvider: React.FC = ({ children }) => {
 
     // Verificando se há dados armazenados no navegador
     if (token && user) {
+      // Definindo ainda o cabeçalho padrão para as requisições com o token obtido
+      api.defaults.headers.authorization = `Bearer ${token}`;
       // Caso haja, retornamos os dados par o estado
       return { token, user: JSON.parse(user) };
     }
@@ -59,6 +70,9 @@ const AuthProvider: React.FC = ({ children }) => {
     localStorage.setItem('@GoBarber:token', token);
     localStorage.setItem('@GoBarber:user', JSON.stringify(user));
 
+    // Definindo ainda o cabeçalho padrão para as requisições com o token obtido
+    api.defaults.headers.authorization = `Bearer ${token}`;
+
     // Armazenando os dados no estado do contexto da aplicação
     setData({ token, user });
   }, []);
@@ -73,9 +87,23 @@ const AuthProvider: React.FC = ({ children }) => {
     setData({} as AuthState);
   }, []);
 
+  // Função para a atualização do usuário
+  // Poderíamos receber apenas alguns parâmetros do tipo 'User' por meio de um tipo 'Partial<User>'
+  const updateUser = useCallback((user: User) => {
+    // Salvando os dados obtidos no armazenamento local do navegador
+    localStorage.setItem('@GoBarber:user', JSON.stringify(user));
+
+    // Atualizando os dados do usuário autenticado
+    setData({
+      // Mantendo o token
+      token: data.token,
+      user,
+    });
+  }, [setData, data.token]);
+
   return (
     // Exportando as propriedades e funções do contexto
-    <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>
+    <AuthContext.Provider value={{ user: data.user, signIn, signOut, updateUser }}>
       {children}
     </AuthContext.Provider>
   );

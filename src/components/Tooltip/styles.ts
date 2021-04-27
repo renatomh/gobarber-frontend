@@ -27,7 +27,7 @@ export const Container = styled.div`
 
     color: #312e38;
 
-    // Criadno a setinha do tooltip
+    // Criando a setinha do tooltip
     &::before {
       content: '';
       border-style: solid;

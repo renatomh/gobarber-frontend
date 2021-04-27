@@ -60,6 +60,7 @@ export const AnimationContainer = styled.div`
     h1 {
       margin-bottom: 24px;
     }
+  }
 
     // Definindo o estilo para o 'Esqueci minha senha'
     a {
@@ -93,7 +94,6 @@ export const AnimationContainer = styled.div`
     &:hover {
       color: ${shade(0.2, '#ff9000')};
     }
-  }
 `;
 
 // Definindo a imagem de fundo

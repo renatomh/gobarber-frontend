@@ -19,6 +19,8 @@ import { Container, Error } from './styles';
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   // Tornamos o nome obrigatório
   name: string;
+  // Passando o estilo para permiri personalização
+  containerStyle?: React.CSSProperties;
   // Definindo o ícone do Input como sendo do tipo componente do React e opcional
   // E informando ainda o tipo do componente (IconBaseProps)
   icon?: React.ComponentType<IconBaseProps>;
@@ -27,7 +29,11 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 // Criando o componente do input para reaproveitar em diversas páginas da aplicação
 // Passamos a interface criada para o componente
 // Convertemos o nome do ícone para 'Icon' para o React entender que é um componente
-const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
+const Input: React.FC<InputProps> = ({
+  name,
+  containerStyle = {},
+  icon: Icon,
+  ...rest }) => {
   // Criando a referência para o input com a tipagem do input do HTML
   const inputRef = useRef<HTMLInputElement>(null);
   // Definindo o estado para quando o campo estiver focado (clicado pelo usuário)
@@ -66,10 +72,12 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
 
   return (
     // Aqui definimos as propriedades do componente, como erro, foco e preenchimento
-    <Container isErrored={!!error} isFocused={isFocused} isFilled={isFilled}>
+    <Container style={containerStyle} isErrored={!!error} isFocused={isFocused} isFilled={isFilled}>
       {/* Verificando se há um ícone e atribuindo o tamanho a ele */}
       {Icon && <Icon size={20} />}
       <input
+        // Disponibilizando o nome do campo para outras funções
+        name={name}
         // Definindo o que fazer quando o campo ganhar foco
         onFocus={handleInputFocus}
         // Definindo o que fazer quando o campo perder foco

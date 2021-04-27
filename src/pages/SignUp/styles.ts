@@ -52,7 +52,6 @@ export const AnimationContainer = styled.div`
     h1 {
       margin-bottom: 24px;
     }
-  }
 
     a {
       color: #f4ede8;
@@ -84,6 +83,7 @@ export const AnimationContainer = styled.div`
     &:hover {
       color: ${shade(0.2, '#ff9000')};
     }
+  }
 `;
 
 export const Background = styled.div`

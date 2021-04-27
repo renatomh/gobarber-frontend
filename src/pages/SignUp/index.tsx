@@ -34,7 +34,7 @@ interface SignUpFormData {
   password: string;
 }
 
-// Criadno a página de cadastro
+// Criando a página de cadastro
 const SignUp: React.FC = () => {
   // Criando a referência para o formulário
   const formRef = useRef<FormHandles>(null);

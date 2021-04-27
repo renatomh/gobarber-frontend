@@ -5,7 +5,7 @@ import { animated } from 'react-spring';
 interface ContainerProps {
   // O tipo poderá ser 'info', 'success' ou 'error'
   type?: 'info' | 'success' | 'error';
-  hasDescription: boolean;
+  hasdescription: number;
 }
 
 // Criando as variações para os toasts de diferentes tipos
@@ -83,7 +83,7 @@ export const Container = styled(animated.div) <ContainerProps>`
 
   // Caso nehuma descrição tenha sido passada, definimos o alinhamento e a margem do ícone
   ${props =>
-    !props.hasDescription &&
+    !props.hasdescription &&
     css`
       align-items: center;
 

@@ -16,7 +16,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   children,
 }) => {
   return (
-    // Criadno o container com a classe definida e os dados
+    // Criando o container com a classe definida e os dados
     <Container className={className}>
       {children}
       <span>{title}</span>

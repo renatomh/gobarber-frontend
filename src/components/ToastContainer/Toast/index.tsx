@@ -48,7 +48,9 @@ const Toast: React.FC<ToastProps> = ({ message, style }) => {
     // Criando o toast e definindo o tipo, a descrição e o estilo
     <Container
       type={message.type}
-      hasDescription={!!message.description}
+      // Aqui modificamos o antigo código '!!message.description' para evitar erros de renderização no DOM (HTML não aceita booleano)
+      // Além disso, devemos deixar tudo em minúsculo 'hasdescription' para também evitar erros
+      hasdescription={Number(!!message.description)}
       style={style}
     >
       {/* Definindo o ícone para o toast (o padrão será 'info' caso nada seja passado) */}
