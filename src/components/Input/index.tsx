@@ -72,7 +72,14 @@ const Input: React.FC<InputProps> = ({
 
   return (
     // Aqui definimos as propriedades do componente, como erro, foco e preenchimento
-    <Container style={containerStyle} isErrored={!!error} isFocused={isFocused} isFilled={isFilled}>
+    <Container
+      style={containerStyle}
+      isErrored={!!error}
+      isFocused={isFocused}
+      isFilled={isFilled}
+      // ID para utilização nos testes
+      data-testid="input-container"
+    >
       {/* Verificando se há um ícone e atribuindo o tamanho a ele */}
       {Icon && <Icon size={20} />}
       <input
