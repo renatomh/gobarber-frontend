@@ -135,7 +135,7 @@ const Profile: React.FC = () => {
         });
       }
     },
-    [addToast, history],
+    [addToast, history, updateUser],
   );
 
   // Função para lidar com a atualização de perfil
