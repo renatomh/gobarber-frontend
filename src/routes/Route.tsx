@@ -40,9 +40,10 @@ const Route: React.FC<RouteProps> = ({
             to={{
               pathname:
                 // Se for uma página privada e o usuário não estiver autenticado, mandamos para o login
-                isPrivate ? '/'
-                  // Se for uma página pública e o usuário estiver autenticado, mandamos para dashboard
-                  : '/dashboard',
+                isPrivate
+                  ? '/'
+                  : // Se for uma página pública e o usuário estiver autenticado, mandamos para dashboard
+                    '/dashboard',
               // Mantendo o histórico de rotas
               state: { from: location },
             }}

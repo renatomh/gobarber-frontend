@@ -40,7 +40,7 @@ const Profile: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   // importando a função para adicionar toasts
   const { addToast } = useToast();
-  // Pegando o histórico 
+  // Pegando o histórico
   const history = useHistory();
 
   // Pegando os dados do usuário logado
@@ -78,10 +78,7 @@ const Profile: React.FC = () => {
               then: Yup.string().min(6, 'No mínimo 6 dígitos'),
               otherwise: Yup.string(),
             })
-            .oneOf(
-              [Yup.ref('password')],
-              'As senhas não coincidem'
-            ),
+            .oneOf([Yup.ref('password')], 'As senhas não coincidem'),
         });
 
         // Validando os dados de acordo com o schema criado
@@ -91,17 +88,25 @@ const Profile: React.FC = () => {
         });
 
         // Pegando somente os dados do formulário que foram preenchidos
-        const { name, email, old_password, password, password_confirmation } = data;
-        const formData = Object.assign({
+        const {
           name,
           email,
-        },
+          old_password,
+          password,
+          password_confirmation,
+        } = data;
+        const formData = {
+          name,
+          email,
           // Caso tenha sido passada a senha atual
-          old_password ? {
-            old_password,
-            password,
-            password_confirmation,
-          } : {});
+          ...(old_password
+            ? {
+                old_password,
+                password,
+                password_confirmation,
+              }
+            : {}),
+        };
 
         // Fazendo a chamada à API para a atualização do perfil do usuário
         const response = await api.put('/profile', formData);
@@ -115,7 +120,8 @@ const Profile: React.FC = () => {
           // Definindo o tipo do toast, o título e a descrição
           type: 'success',
           title: 'Perfil atualizado!',
-          description: 'As suas informações de perfil foram atualizadas com sucesso!',
+          description:
+            'As suas informações de perfil foram atualizadas com sucesso!',
         });
       } catch (err) {
         // Caso ocorra algum erro, verificamos se foi na validação dos dados
@@ -131,7 +137,8 @@ const Profile: React.FC = () => {
         addToast({
           type: 'error',
           title: 'Erro na atualização',
-          description: 'Ocorreu um erro ao atualizar o perfil, tente novamente.',
+          description:
+            'Ocorreu um erro ao atualizar o perfil, tente novamente.',
         });
       }
     },
@@ -144,15 +151,16 @@ const Profile: React.FC = () => {
     (e: ChangeEvent<HTMLInputElement>) => {
       // Caso algum arquivo tenha sido selecionado
       if (e.target.files) {
-        //console.log(e.target.files[0]);
+        // console.log(e.target.files[0]);
         // Criando o FormData para enviar o arquivo ao servidor
         const data = new FormData();
         // Inserindo os dados no ofrmulário
-        data.append('avatar', e.target.files[0])
+        data.append('avatar', e.target.files[0]);
         // Fazendo a chamada à API
-        api.patch('/users/avatar', data)
+        api
+          .patch('/users/avatar', data)
           // Ao final da requisição
-          .then((response) => {
+          .then(response => {
             // Atualizando o usuário no contexto de autenticação
             updateUser(response.data);
             // Informando o usuário sobre o sucesso na atualização
@@ -162,7 +170,9 @@ const Profile: React.FC = () => {
             });
           });
       }
-    }, [addToast, updateUser]);
+    },
+    [addToast, updateUser],
+  );
 
   return (
     <Container>
@@ -182,7 +192,7 @@ const Profile: React.FC = () => {
           // Inicializando os dados nos campos de input
           initialData={{
             name: user.name,
-            email: user.email
+            email: user.email,
           }}
           onSubmit={handleSubmit}
         >

@@ -57,8 +57,8 @@ const ResetPassword: React.FC = () => {
           // Verificando se a confirmação de senha está correta
           password_confirmation: Yup.string().oneOf(
             [Yup.ref('password')],
-            'As senhas não coincidem'
-          )
+            'As senhas não coincidem',
+          ),
         });
 
         // Validando os dados de acordo com o schema criado
@@ -80,7 +80,7 @@ const ResetPassword: React.FC = () => {
         await api.post('/password/reset/', {
           password,
           password_confirmation,
-          token
+          token,
         });
         addToast({
           type: 'success',
@@ -103,7 +103,8 @@ const ResetPassword: React.FC = () => {
         addToast({
           type: 'error',
           title: 'Erro ao redefinir senha',
-          description: 'Ocorreu um erro ao redefinir sua senha, tente novamente.',
+          description:
+            'Ocorreu um erro ao redefinir sua senha, tente novamente.',
         });
       }
     },

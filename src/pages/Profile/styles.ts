@@ -4,7 +4,7 @@ import { shade } from 'polished';
 export const Container = styled.div`
   > header {
     height: 144px;
-    background: #28262E;
+    background: #28262e;
 
     display: flex;
     align-items: center;
@@ -80,7 +80,7 @@ export const AvatarInput = styled.div`
     position: absolute;
     width: 48px;
     height: 48px;
-    background: #FF9000;
+    background: #ff9000;
     border-radius: 50%;
     border: 0;
     // Posicionando no canto inferior direito do 'AvatarInput'
@@ -103,7 +103,7 @@ export const AvatarInput = styled.div`
     svg {
       width: 20px;
       height: 20px;
-      color: #312E38;
+      color: #312e38;
     }
 
     &:hover {

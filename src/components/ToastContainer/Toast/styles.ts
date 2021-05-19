@@ -31,7 +31,7 @@ const toastTypeVariations = {
 
 // Criando a estilização para o toast
 // Devemos utilizar o 'animated.div' para aplicar as animações de transição do 'react-spring'
-export const Container = styled(animated.div) <ContainerProps>`
+export const Container = styled(animated.div)<ContainerProps>`
   width: 360px;
 
   // Posição relativa, pois a absoluta já está no container do toast

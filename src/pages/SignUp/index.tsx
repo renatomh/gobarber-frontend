@@ -40,7 +40,7 @@ const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   // importando a função para adicionar toasts
   const { addToast } = useToast();
-  // Pegando o histórico 
+  // Pegando o histórico
   const history = useHistory();
 
   // Função para lidar com a validação dos dados do formulário

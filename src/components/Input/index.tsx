@@ -33,7 +33,8 @@ const Input: React.FC<InputProps> = ({
   name,
   containerStyle = {},
   icon: Icon,
-  ...rest }) => {
+  ...rest
+}) => {
   // Criando a referência para o input com a tipagem do input do HTML
   const inputRef = useRef<HTMLInputElement>(null);
   // Definindo o estado para quando o campo estiver focado (clicado pelo usuário)
@@ -94,7 +95,7 @@ const Input: React.FC<InputProps> = ({
         // Associando o input à referência
         ref={inputRef}
         {...rest}
-      //type="text"
+        // type="text"
       />
       {/* Caso exista algum erro, apresentamos o ícone no campo do input */}
       {error && (

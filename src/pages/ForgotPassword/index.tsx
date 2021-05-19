@@ -70,7 +70,8 @@ const ForgotPassword: React.FC = () => {
         addToast({
           type: 'success',
           title: 'E-mail de recuperação enviado',
-          description: 'Enviamos um e-mail para confirmar a recuperação de senha, verifique sua caixa de entrada.',
+          description:
+            'Enviamos um e-mail para confirmar a recuperação de senha, verifique sua caixa de entrada.',
         });
       } catch (err) {
         // Caso ocorra algum erro, verificamos se foi na validação dos dados
@@ -86,11 +87,11 @@ const ForgotPassword: React.FC = () => {
         addToast({
           type: 'error',
           title: 'Erro na recuperação de senha',
-          description: 'Ocorreu um erro ao tentar realizar a recuperação de senha, tente novamente.',
+          description:
+            'Ocorreu um erro ao tentar realizar a recuperação de senha, tente novamente.',
         });
-      }
-      // Ao final da execução do try/catch
-      finally {
+      } finally {
+        // Ao final da execução do try/catch
         // Atualizando o estado da página para "carregado"
         setLoading(false);
       }
@@ -112,7 +113,9 @@ const ForgotPassword: React.FC = () => {
             {/* Campo para entrar com o e-mail */}
             <Input name="email" icon={FiMail} placeholder="E-mail" />
 
-            <Button loading={loading} type="submit">Recuperar</Button>
+            <Button loading={loading} type="submit">
+              Recuperar
+            </Button>
           </Form>
 
           {/* Link para a página de login */}

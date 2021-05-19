@@ -89,21 +89,26 @@ const AuthProvider: React.FC = ({ children }) => {
 
   // Função para a atualização do usuário
   // Poderíamos receber apenas alguns parâmetros do tipo 'User' por meio de um tipo 'Partial<User>'
-  const updateUser = useCallback((user: User) => {
-    // Salvando os dados obtidos no armazenamento local do navegador
-    localStorage.setItem('@GoBarber:user', JSON.stringify(user));
+  const updateUser = useCallback(
+    (user: User) => {
+      // Salvando os dados obtidos no armazenamento local do navegador
+      localStorage.setItem('@GoBarber:user', JSON.stringify(user));
 
-    // Atualizando os dados do usuário autenticado
-    setData({
-      // Mantendo o token
-      token: data.token,
-      user,
-    });
-  }, [setData, data.token]);
+      // Atualizando os dados do usuário autenticado
+      setData({
+        // Mantendo o token
+        token: data.token,
+        user,
+      });
+    },
+    [setData, data.token],
+  );
 
   return (
     // Exportando as propriedades e funções do contexto
-    <AuthContext.Provider value={{ user: data.user, signIn, signOut, updateUser }}>
+    <AuthContext.Provider
+      value={{ user: data.user, signIn, signOut, updateUser }}
+    >
       {children}
     </AuthContext.Provider>
   );

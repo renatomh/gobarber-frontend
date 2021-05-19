@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { shade } from 'polished';
 
 // Container principal para a tela
@@ -7,7 +7,7 @@ export const Container = styled.div``;
 // Cabeçalho para a tela
 export const Header = styled.header`
   padding: 32px 0;
-  background: #28262E;
+  background: #28262e;
 `;
 
 // Conteúdo do cabeçalho
@@ -60,13 +60,13 @@ export const Profile = styled.div`
     line-height: 24px;
 
     span {
-      color: #F4EEE8;
+      color: #f4eee8;
     }
 
     // Nome do usuário com link para página de perfil
     a {
       text-decoration: none;
-      color: #FF9000;
+      color: #ff9000;
 
       // Reduzindo a opacidade ao passar o mouse sobre o texto
       &:hover {
@@ -97,7 +97,7 @@ export const Schedule = styled.div`
 
   p {
     margin-top: 8px;
-    color: #FF9000;
+    color: #ff9000;
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -111,7 +111,7 @@ export const Schedule = styled.div`
       content: '';
       width: 1px;
       height: 12px;
-      background: #FF9000;
+      background: #ff9000;
       // Adicionando a margem horizontal direita e esquerda
       margin: 0 8px;
     }
@@ -136,7 +136,7 @@ export const NextAppointment = styled.aside`
   }
 
   div {
-    background: #3E3B47;
+    background: #3e3b47;
     display: flex;
     align-items: center;
     padding: 16px 24px;
@@ -153,7 +153,7 @@ export const NextAppointment = styled.aside`
       left: 0;
       top: 10%;
       content: '';
-      background: #FF9000;
+      background: #ff9000;
     }
 
     img {
@@ -164,7 +164,7 @@ export const NextAppointment = styled.aside`
 
     strong {
       margin-left: 24px;
-      color: #FFF;
+      color: #fff;
     }
 
     span {
@@ -175,12 +175,11 @@ export const NextAppointment = styled.aside`
 
       // Ícone do agendamento
       svg {
-        color: #FF9000;
+        color: #ff9000;
         margin-right: 8px;
       }
     }
   }
-  
 `;
 
 // Seção para os agendamentos
@@ -192,7 +191,7 @@ export const Section = styled.section`
     color: #999091;
     font-size: 20px;
     line-height: 26px;
-    border-bottom: 1px solid #3E3B47;
+    border-bottom: 1px solid #3e3b47;
     // Ocupando toda a área
     display: block;
     padding-bottom: 16px;
@@ -218,12 +217,12 @@ export const Appointment = styled.div`
     margin-left: auto;
     display: flex;
     align-items: center;
-    color: #F4EDE8;
+    color: #f4ede8;
     width: 70px;
 
     // Ícone do agendamento
     svg {
-      color: #FF9000;
+      color: #ff9000;
       margin-right: 8px;
     }
   }
@@ -231,7 +230,7 @@ export const Appointment = styled.div`
   div {
     // Ocupando toda a extensão
     flex: 1;
-    background: #3E3B47;
+    background: #3e3b47;
     display: flex;
     align-items: center;
     padding: 16px 24px;
@@ -247,7 +246,7 @@ export const Appointment = styled.div`
 
   strong {
     margin-left: 24px;
-    color: #FFF;
+    color: #fff;
     font-size: 20px;
   }
 `;
