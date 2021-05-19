@@ -60,6 +60,12 @@ O comando abaixo é utilizado para a conversão do código em desenvolvimento pa
 $ yarn build
 ```
 
+Caso necessário, para a execução após o *build* na máquina local, o comando abaixo iniciará a aplicação (normalmente na porta 5000)
+
+```bash
+$ serve -s build
+```
+
 ## 📄 Licença
 
 Esse projeto está sob a licença **MIT**. Para mais informações, accesse [LICENSE](./LICENSE).

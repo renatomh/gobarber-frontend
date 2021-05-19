@@ -20,14 +20,14 @@ export const Content = styled.div`
   max-width: 700px;
 `;
 
-// Criando a animação para o conteúdo aparecer a partir da direita
+/* Criando a animação para o conteúdo aparecer a partir da direita */
 const appearFromRight = keyframes`
-  // Definindo a origem
+  /* Definindo a origem */
   from {
     opacity: 0;
     transform: translateX(50px);
   }
-  // E o destino
+  /* E o destino */
   to {
     opacity: 1;
     transform: translateX(0);
@@ -40,11 +40,11 @@ export const AnimationContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  // Definindo a animação para o container
+  /* Definindo a animação para o container */
   animation: ${appearFromRight} 1s;
 
   form {
-    // Caso queiramos adicionar mais botões, é necessário diminuir essa margem
+    /* Caso queiramos adicionar mais botões, é necessário diminuir essa margem */
     margin: 80px 0;
     width: 340px;
     text-align: center;

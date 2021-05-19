@@ -28,18 +28,18 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // Centralizando o conteúdo na página
+  /* Centralizando o conteúdo na página */
   margin: -176px auto 0;
 
   width: 100%;
   max-width: 700px;
 
   form {
-    // Caso queiramos adicionar mais botões, é necessário diminuir essa margem
+    /* Caso queiramos adicionar mais botões, é necessário diminuir essa margem */
     margin: 80px 0;
     width: 340px;
     text-align: center;
-    // Permitindo a centralização do 'AvatarInput'
+    /* Permitindo a centralização do 'AvatarInput' */
     display: flex;
     flex-direction: column;
 
@@ -66,7 +66,7 @@ export const Content = styled.div`
 export const AvatarInput = styled.div`
   margin-bottom: 26px;
   position: relative;
-  // Centralizando no 'Form'
+  /* Centralizando no 'Form' */
   align-self: center;
 
   img {
@@ -75,7 +75,7 @@ export const AvatarInput = styled.div`
     border-radius: 50%;
   }
 
-  // Estilizando o ícone da câmera
+  /* Estilizando o ícone da câmera */
   label {
     position: absolute;
     width: 48px;
@@ -83,19 +83,19 @@ export const AvatarInput = styled.div`
     background: #ff9000;
     border-radius: 50%;
     border: 0;
-    // Posicionando no canto inferior direito do 'AvatarInput'
+    /* Posicionando no canto inferior direito do 'AvatarInput' */
     right: 0;
     bottom: 0;
-    // Delay para mudança de cover ao passar o mouse por cima
+    /* Delay para mudança de cover ao passar o mouse por cima */
     transition: background-color 0.2s;
-    // Centralizando o ícone no botão
+    /* Centralizando o ícone no botão */
     display: flex;
     align-items: center;
     justify-content: center;
-    // Habilitando o cursor após a utilização como estilo do input
+    /* Habilitando o cursor após a utilização como estilo do input */
     cursor: pointer;
 
-    // Escondendo o display padrão de input para os arquivos
+    /* Escondendo o display padrão de input para os arquivos */
     input {
       display: none;
     }

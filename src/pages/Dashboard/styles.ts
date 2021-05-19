@@ -1,35 +1,35 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-// Container principal para a tela
+/* Container principal para a tela */
 export const Container = styled.div``;
 
-// Cabeçalho para a tela
+/* Cabeçalho para a tela */
 export const Header = styled.header`
   padding: 32px 0;
   background: #28262e;
 `;
 
-// Conteúdo do cabeçalho
+/* Conteúdo do cabeçalho */
 export const HeaderContent = styled.div`
-  // Definindo a largura máxima para o conteúdo
+  /* Definindo a largura máxima para o conteúdo */
   max-width: 1120px;
   margin: 0 auto;
   display: flex;
   align-items: center;
 
-  // Estilizando a primeira imagem do cabeçalho (logo)
+  /* Estilizando a primeira imagem do cabeçalho (logo) */
   > img {
     height: 80px;
   }
 
   button {
-    // Ocupando todo o espaço na esquerda o possível com margem
+    /* Ocupando todo o espaço na esquerda o possível com margem */
     margin-left: auto;
     background: transparent;
     border: 0;
 
-    // Todo ícone do React é um SVG
+    /* Todo ícone do React é um SVG */
     svg {
       color: #999591;
       width: 20px;
@@ -38,18 +38,18 @@ export const HeaderContent = styled.div`
   }
 `;
 
-// Área de perfil para o usuário
+/* Área de perfil para o usuário */
 export const Profile = styled.div`
   display: flex;
   align-items: center;
-  // Distanciando um pouco da logo
+  /* Distanciando um pouco da logo */
   margin-left: 80px;
 
-  // Estilizando a imagem de perfil (avatar)
+  /* Estilizando a imagem de perfil (avatar) */
   img {
     width: 56px;
     height: 56px;
-    // Arredondando a imagem
+    /* Arredondando a imagem */
     border-radius: 50%;
   }
 
@@ -63,12 +63,12 @@ export const Profile = styled.div`
       color: #f4eee8;
     }
 
-    // Nome do usuário com link para página de perfil
+    /* Nome do usuário com link para página de perfil */
     a {
       text-decoration: none;
       color: #ff9000;
 
-      // Reduzindo a opacidade ao passar o mouse sobre o texto
+      /* Reduzindo a opacidade ao passar o mouse sobre o texto */
       &:hover {
         opacity: 0.8;
       }
@@ -76,18 +76,18 @@ export const Profile = styled.div`
   }
 `;
 
-// Conteúdo geral da página
+/* Conteúdo geral da página */
 export const Content = styled.main`
-  // Definindo a largura máxima para o conteúdo da página
+  /* Definindo a largura máxima para o conteúdo da página */
   max-width: 1120px;
   margin: 64px auto;
-  // Permitindo que o agendamento e calendário fiquem um do lado do outro
+  /* Permitindo que o agendamento e calendário fiquem um do lado do outro */
   display: flex;
 `;
 
-// Agendamentos do usuário
+/* Agendamentos do usuário */
 export const Schedule = styled.div`
-  // Ocupando metado do espaço do conteúdo da página
+  /* Ocupando metado do espaço do conteúdo da página */
   flex: 1;
   margin-right: 120px;
 
@@ -102,7 +102,7 @@ export const Schedule = styled.div`
     align-items: center;
     font-weight: 500;
 
-    // Aplicando o separador vertical a partir do segundo item
+    /* Aplicando o separador vertical a partir do segundo item */
     span {
       display: flex;
       align-items: center;
@@ -112,11 +112,11 @@ export const Schedule = styled.div`
       width: 1px;
       height: 12px;
       background: #ff9000;
-      // Adicionando a margem horizontal direita e esquerda
+      /* Adicionando a margem horizontal direita e esquerda */
       margin: 0 8px;
     }
 
-    // Poderíamos fazer também como abaixo
+    /* Poderíamos fazer também como abaixo */
     /* span + span {
       margin-left: 8px;
       padding-left: 8px;
@@ -125,7 +125,7 @@ export const Schedule = styled.div`
   }
 `;
 
-// Infrmação sobre o próximo agendamento
+/* Infrmação sobre o próximo agendamento */
 export const NextAppointment = styled.aside`
   margin-top: 64px;
 
@@ -142,10 +142,10 @@ export const NextAppointment = styled.aside`
     padding: 16px 24px;
     border-radius: 10px;
     margin-top: 24px;
-    // Necessário para adicionar a pequena borda lateral esquerda
+    /* Necessário para adicionar a pequena borda lateral esquerda */
     position: relative;
 
-    // Inserindo a pequena borda na lateral esquerda
+    /* Inserindo a pequena borda na lateral esquerda */
     &::before {
       position: absolute;
       height: 80%;
@@ -173,7 +173,7 @@ export const NextAppointment = styled.aside`
       align-items: center;
       color: #999591;
 
-      // Ícone do agendamento
+      /* Ícone do agendamento */
       svg {
         color: #ff9000;
         margin-right: 8px;
@@ -182,17 +182,17 @@ export const NextAppointment = styled.aside`
   }
 `;
 
-// Seção para os agendamentos
+/* Seção para os agendamentos */
 export const Section = styled.section`
   margin-top: 48px;
 
-  // Para o primeiro item
+  /* Para o primeiro item */
   > strong {
     color: #999091;
     font-size: 20px;
     line-height: 26px;
     border-bottom: 1px solid #3e3b47;
-    // Ocupando toda a área
+    /* Ocupando toda a área */
     display: block;
     padding-bottom: 16px;
     margin-bottom: 16px;
@@ -203,12 +203,12 @@ export const Section = styled.section`
   }
 `;
 
-// Agendamentos do prestador de serviço
+/* Agendamentos do prestador de serviço */
 export const Appointment = styled.div`
   display: flex;
   align-items: center;
 
-  // Toda a 'div' antes da qual houver um 'Appointment'
+  /* Toda a 'div' antes da qual houver um 'Appointment' */
   & + div {
     margin-top: 16px;
   }
@@ -220,7 +220,7 @@ export const Appointment = styled.div`
     color: #f4ede8;
     width: 70px;
 
-    // Ícone do agendamento
+    /* Ícone do agendamento */
     svg {
       color: #ff9000;
       margin-right: 8px;
@@ -228,7 +228,7 @@ export const Appointment = styled.div`
   }
 
   div {
-    // Ocupando toda a extensão
+    /* Ocupando toda a extensão */
     flex: 1;
     background: #3e3b47;
     display: flex;
@@ -251,7 +251,7 @@ export const Appointment = styled.div`
   }
 `;
 
-// Calendário com agendamentos do prestador de serviço
+/* Calendário com agendamentos do prestador de serviço */
 export const Calendar = styled.aside`
   width: 380px;
 

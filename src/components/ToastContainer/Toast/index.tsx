@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-// Importando os ícones para os toasts
+/* Importando os ícones para os toasts */
 import {
   FiAlertCircle,
   FiCheckCircle,
@@ -7,49 +7,49 @@ import {
   FiXCircle,
 } from 'react-icons/fi';
 
-// Importando o contexto para o toast
+/* Importando o contexto para o toast */
 import { ToastMessage, useToast } from '../../../hooks/toast';
 
-// Importando os estilos personalizados
+/* Importando os estilos personalizados */
 import { Container } from './styles';
 
-// Definindo a tipagem para as propriedades do toast
+/* Definindo a tipagem para as propriedades do toast */
 interface ToastProps {
   message: ToastMessage;
   style: object;
 }
 
-// Definindo os ícones para cada tipo de toast
+/* Definindo os ícones para cada tipo de toast */
 const icons = {
   info: <FiInfo size={24} />,
   success: <FiCheckCircle size={24} />,
   error: <FiAlertCircle size={24} />,
 };
 
-// Criando o componente para o toast
+/* Criando o componente para o toast */
 const Toast: React.FC<ToastProps> = ({ message, style }) => {
-  // Obtendo a função para remover o toast
+  /* Obtendo a função para remover o toast */
   const { removeToast } = useToast();
 
-  // Atualizando a visualização assim que um novo toast surgir em tela
+  /* Atualizando a visualização assim que um novo toast surgir em tela */
   useEffect(() => {
-    // Definindo um timer para fechar o toast automaticamente (duração de 3s)
+    /* Definindo um timer para fechar o toast automaticamente (duração de 3s) */
     const timer = setTimeout(() => {
       removeToast(message.id);
     }, 3000);
 
-    // Interrompendo o timeout caso o toast seja fechado pelo usuário
+    /* Interrompendo o timeout caso o toast seja fechado pelo usuário */
     return () => {
       clearTimeout(timer);
     };
   }, [removeToast, message.id]);
 
   return (
-    // Criando o toast e definindo o tipo, a descrição e o estilo
+    /* Criando o toast e definindo o tipo, a descrição e o estilo */
     <Container
       type={message.type}
-      // Aqui modificamos o antigo código '!!message.description' para evitar erros de renderização no DOM (HTML não aceita booleano)
-      // Além disso, devemos deixar tudo em minúsculo 'hasdescription' para também evitar erros
+      /* Aqui modificamos o antigo código '!!message.description' para evitar erros de renderização no DOM (HTML não aceita booleano) */
+      /* Além disso, devemos deixar tudo em minúsculo 'hasdescription' para também evitar erros */
       hasdescription={Number(!!message.description)}
       style={style}
     >

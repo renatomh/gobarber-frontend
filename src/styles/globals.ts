@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-// Definindo a estilização global para a aplicação
+/* Definindo a estilização global para a aplicação */
 export default createGlobalStyle`
   * {
     margin: 0;

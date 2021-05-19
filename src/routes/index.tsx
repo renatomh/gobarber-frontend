@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 
-// importando o componente de rota personalizado criado
+/* importando o componente de rota personalizado criado */
 import Route from './Route';
 
-// Importando as páginas criadas
+/* Importando as páginas criadas */
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import ForgotPassword from '../pages/ForgotPassword';
@@ -13,7 +13,7 @@ import ResetPassword from '../pages/ResetPassword';
 import Profile from '../pages/Profile';
 import Dashboard from '../pages/Dashboard';
 
-// Criando o componente para o roteamento
+/* Criando o componente para o roteamento */
 const Routes: React.FC = () => {
   return (
     <Switch>
