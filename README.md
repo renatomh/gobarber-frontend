@@ -1,10 +1,20 @@
 <h1 align="center"><img alt="GoBarber" title="GoBarber" src=".github/logo.png" width="250" /></h1>
 
+<p align="center"><img src=".github/sample1.gif" alt="sample" width="750"/></p>
+
 # GoBarber - *Frontend*
 
 ## 💡 Ideia do projeto
 
 Projeto desenvolvido durante o bootcamp *GoStack* da Rocketseat, com os módulos de *frontend*.
+
+## 🔍 Funcionalidades
+
+* Realização de login em uma conta já existente na plataforma ou cadastro de um novo usuário;
+* Listagem dos agendamentos feitos para o prestador de serviço;
+* Atualização do perfil do usuário e avatar;
+
+<p align="center"><img src=".github/sample2.gif" alt="sample" width="750"/></p>
 
 ## 🛠 Tecnologias Utilizadas
 
